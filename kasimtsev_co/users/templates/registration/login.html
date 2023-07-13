@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<div>
+  <form action="{% url 'login' %}" method="post">
+  <div class="module">
+    <div class = "module-header">
+      {% include "components/logo.html" %}
+      <h3>Вход</h3>
+    </div>
+    <div class = "login-form">
+    {% for field in form %}
+        {{ field }}
+    {% endfor %}
+    <a href = "{%  %}"><p>Забыли пароль?</p></a>
+    {% csrf_token %}
+    {% if form.errors %}
+    <p class = "error-text">Вы неправильно ввели логин или пароль.</p>
+    {% endif %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <input type="submit" class = "big-button" value="Войти">
+  </div>
+    <form>
+</div>
+{% endblock %}
