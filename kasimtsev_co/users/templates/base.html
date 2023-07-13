@@ -3,18 +3,24 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <title>{% block title %}Kasimtsev School{% endblock %}</title>
   <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
-<body>
+
+<body class = "{% block theme %}{% endblock %} {% block background %}{% endblock %}">
 {% block header %}
   {% include 'components/base-header.html' %}
 {% endblock %}
-<div id="content">
+<div class="content-wrapper background-filter">
+<div class="content">
 {% block content %}
-
+<p>На данный момент эта страница пуста
 {% endblock %}
 </div>
+
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
 // DOM loaded
@@ -22,5 +28,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 {% endblock %}
 })
 </script>
+
 </body>
 </html>

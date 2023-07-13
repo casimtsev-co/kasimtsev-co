@@ -7,6 +7,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
    path('admin/', admin.site.urls, name = 'admin'),
    path('account/', include ("users.urls")),
+   path('', include ("courses.urls")),
 ]
 
 if settings.DEBUG:

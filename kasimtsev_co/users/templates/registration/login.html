@@ -4,26 +4,26 @@
 
 {% block header %}{% endblock %}
 
+{% block background %}login-background{% endblock %}
+
 {% block content %}
-<div>
-  <form action="{% url 'login' %}" method="post">
   <div class="module">
+    <form class = "form" action="{% url 'login' %}" method="post">
     <div class = "module-header">
       {% include "components/logo.html" %}
-      <h3>Вход</h3>
+      <h3 class = "module-heading">Вход</h3>
     </div>
-    <div class = "login-form">
+    <div class = "registration-form">
     {% for field in form %}
         {{ field }}
     {% endfor %}
-    <a href = "{%  %}"><p>Забыли пароль?</p></a>
+    <a href = {% url 'password-reset' %}><p>Забыли пароль?</p></a>
     {% csrf_token %}
     {% if form.errors %}
-    <p class = "error-text">Вы неправильно ввели логин или пароль.</p>
+    <p class = "error">Вы неправильно ввели логин или пароль.</p>
     {% endif %}
     <input type="hidden" name="next" value="{{ next }}" />
     <input type="submit" class = "big-button" value="Войти">
-  </div>
     <form>
-</div>
+  </div>
 {% endblock %}

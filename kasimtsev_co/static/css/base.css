@@ -42,14 +42,107 @@ table {
 	border-spacing: 0;
 }
 
-.module {
+body, html { 
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.content-wrapper {
     display: flex;
-    width: 491px;
-    padding: 60px 40px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.white-theme {
+    color: black;
+}
+.black-theme {
+    color: white;
+}
+
+
+a {
+    color: #3899D0;
+    text-decoration: none;
+}
+
+.logo-text-wrapper
+{
+    display: flex;
+    padding: 0px 20px;
+    align-items: center;
+    align-self: stretch;
+}
+
+h1 {
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+p {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+input {
+    border: none;
+}
+
+.big-logo-text {
+    width: 201px;
+    height: 48px;
+    overflow: hidden;
+    color: var(--main-text-color-dark, #FFF);
+    text-overflow: ellipsis;
+    whitespace: nowrap;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.small-logo-text {
+    color: #FFF;
+    text-align: right;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    flex: 1 0 0;
+}
+
+.logo {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.module-heading {
+    color: var(--useless-text-dark, #1E1E1E);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.form {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 69px;
+}
+
+.module {
+    width: 26em;
+    padding: 60px 40px;
     border-radius: var(--cards-corner-radius, 10px);
     background: var(--dark-card, rgba(17, 17, 17, 0.90));
     backdrop-filter: blur(30px);
@@ -63,6 +156,8 @@ table {
 }
 
 .input {
+    color: white;
+    font-size: 20px;
     display: flex;
     height: 70px;
     padding: 0px 20px;
@@ -82,7 +177,7 @@ table {
     line-height: normal;
 }
 
-.login-form {
+.registration-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,5 +196,32 @@ table {
     border-radius: 10px;
     background: var(--button-gradient-color, linear-gradient(172deg, #8D90EC 0%, #D58EE7 100%));
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
+.big-button:hover {
+    cursor: pointer;
+}
+
+.login-background {
+    background-color: #0F2163;
+    background-image: url("/static/images/login.png");
+}
+.signup-background {
+    background-color: #0F2163;
+    background-image: url("/static/images/signup.png");
+}
+
+.background-filter {
+    fill: rgba(20, 20, 20, 0.39);
+    backdrop-filter: blur(14.5px);
+}
+
+.error {
+    color: #D03841;
+}
