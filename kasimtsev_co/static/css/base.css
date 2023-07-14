@@ -104,6 +104,15 @@ input {
     width: 100%;
 }
 
+.white-theme.header-wrapper.main-header{
+    color: black;
+}
+
+
+.black-theme.header-wrapper.main-header{
+    color: white;
+}
+
 .big-logo-text {
     width: 201px;
     height: 48px;
@@ -271,16 +280,13 @@ h2 {
 }
 
 .main-header {
-    color: black;
     display: flex;
     width: 1235px;
     height: 80px;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
-    font-size: 24px;
-    color: black;
-    
+    font-size: 24px;    
 }
 
 h3 {
@@ -351,4 +357,8 @@ line-height: normal;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0; 
+}
+
+.black-background {
+    background-color: black;
 }
