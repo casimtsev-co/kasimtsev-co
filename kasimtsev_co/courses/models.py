@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
-from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import RegexValidator
 
 #from .users.models import Teacher, Student
