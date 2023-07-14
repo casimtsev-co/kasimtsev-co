@@ -1,17 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'registration/registration-base.html' %}
 
 {% block title %}Выход из аккаунта{% endblock %}
 
-{% block header %}{% endblock %}
-
-{% block background %}login-background{% endblock %}
-
-{% block theme %}black-theme{% endblock %}
-
-{% block content %}
-<div class="module">
-  <h1>Поздравляем!</h1>
+{% block form %}
+  <h2>Поздравляем!</h2>
   <p>Вы успешно вышли из аккаунта.</p>
   <a class = "big-button" href="{% url "login" %}">Войти ещё раз</a></p>
-</div>
 {% endblock %}

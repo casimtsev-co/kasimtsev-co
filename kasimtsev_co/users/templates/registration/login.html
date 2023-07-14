@@ -1,13 +1,8 @@
-{% extends "base.html" %}
+{% extends 'registration/registration-base.html' %}
 
 {% block title %}Вход{% endblock %}
 
-{% block header %}{% endblock %}
-
-{% block background %}login-background{% endblock %}
-
-{% block content %}
-  <div class="module">
+{% block form %}
     <form class = "form" action="{% url 'login' %}" method="post">
     <div class = "module-header">
       {% include "components/logo.html" %}
@@ -17,7 +12,7 @@
     {% for field in form %}
         {{ field }}
     {% endfor %}
-    <a href = {% url 'password-reset' %}><p>Забыли пароль?</p></a>
+    <a class = "highlited-link" href = {% url 'password-reset' %}><p>Забыли пароль?</p></a>
     {% csrf_token %}
     {% if form.errors %}
     <p class = "error">Вы неправильно ввели логин или пароль.</p>
@@ -25,5 +20,5 @@
     <input type="hidden" name="next" value="{{ next }}" />
     <input type="submit" class = "big-button" value="Войти">
     <form>
-  </div>
 {% endblock %}
+

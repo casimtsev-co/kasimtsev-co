@@ -20,7 +20,11 @@
 <p>На данный момент эта страница пуста
 {% endblock %}
 </div>
-
+{% block footer %}
+<footer>
+  <p>Все права защищены</p>
+</footer>
+{% endblock %}
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
 // DOM loaded
@@ -28,6 +32,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
 {% endblock %}
 })
 </script>
-
 </body>
 </html>

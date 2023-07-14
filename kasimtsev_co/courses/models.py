@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from phonenumber_field.modelfields import PhoneNumberField
+from django.core.validators import RegexValidator
+
 #from .users.models import Teacher, Student
 
 class Subject(models.Model):
@@ -144,4 +147,17 @@ class Image(ItemBase):
 
 class Video(ItemBase):
     url = models.URLField()
+
+class AnonymusQuestion (models.Model):
+    sender = models.ForeignKey(
+            User,
+            related_name='questions',
+            on_delete=models.CASCADE,
+            blank = True
+            )
+    name = models.CharField(max_length=200)
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Телефон должен быть в формате: '+999999999'. До 15 цифр разрешено.")
+    phone = models.CharField(validators=[phone_regex], max_length=17, blank=True) 
+    def __str__(self):
+        return self.title
 

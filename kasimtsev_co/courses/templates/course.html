@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 
-{% block title %}Главная{% endblock %}
+{% block title %}Курс по 3D max{% endblock %}
 
 {% block header %}{% include "components/header.html" %}{% endblock %}
 
-{% block background %}white-background{% endblock %}
+{% block background %}black-background{% endblock %}
 
-{% block theme %}white-theme{% endblock %}
+{% block theme %}black-theme{% endblock %}
 
 {% block content %}
 
 <div class = "space-between">
-  <h2>Kasimtsev school - первый этап на пути в игровую индуcтрию</h2>
-  <img src = "/static/images/gamepad.png" alt = "3d геймпад">
+  <div>
+  <h1 class = "extra-heading">Курс по 3ds max</h2>
+  <h2>Начни моделировать <span class = "purple">с нуля</span</h2>
+  <a class = "big-button", href= "{% url 'course-enrole' %}">Записаться на курс</a>
+  </div>
+  <img src = "/static/images/spacecraft.png" alt = "3d инопрешеленец">
 </div>
 <div>
-  <h1>Почему мы</h1>
-  <p class = "big-text">Мы будем вашими надежными наставниками и творческими спутниками, готовыми вдохновить, обучить и помочь вам воплотить свои самые смелые игровые идеи в реальность.</p>
+  <h1>Главное о профессии</h1>
+  <p class = "big-text">Станьте востребованным специалистом 3ds Max и откройте двери к увлекательной и перспективной карьере. В мире трехмерной визуализации существует огромный спрос на профессионалов, владеющих навыками 3ds Max. Будьте частью процветающей индустрии развлечений, архитектуры, рекламы и дизайна, где ваш талант и творческий потенциал будут цениться.</p>
 </div>
 <div>
   <h1>Что будет, когда ты пройдёшь наш курс</h1>

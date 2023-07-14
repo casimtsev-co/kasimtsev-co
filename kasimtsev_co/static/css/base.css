@@ -55,6 +55,10 @@ body, html {
     min-height: 100%;
 }
 
+.content{
+    max-width: 1235px;
+}
+
 .white-theme {
     color: black;
 }
@@ -64,8 +68,11 @@ body, html {
 
 
 a {
-    color: #3899D0;
+    color: black;
     text-decoration: none;
+}
+.highlited-link {
+    color: #3899D0;
 }
 
 .logo-text-wrapper
@@ -77,8 +84,9 @@ a {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 64px;
     padding-bottom: 30px;
+    font-weight: 750;
 }
 
 p {
@@ -90,11 +98,16 @@ input {
     border: none;
 }
 
+.white-submit {
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+}
+
 .big-logo-text {
     width: 201px;
     height: 48px;
     overflow: hidden;
-    color: var(--main-text-color-dark, #FFF);
     text-overflow: ellipsis;
     whitespace: nowrap;
     font-family: Inter;
@@ -105,7 +118,6 @@ input {
 }
 
 .small-logo-text {
-    color: #FFF;
     text-align: right;
     font-family: Inter;
     font-size: 24px;
@@ -121,6 +133,10 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.black {
+    color: black;
 }
 
 .module-heading {
@@ -139,13 +155,22 @@ input {
     align-items: center;
     gap: 69px;
 }
+.module-wrapper {
+    width: 26em;
+}
+
+.inline-wrapper {
+    width: 50%;
+}
 
 .module {
-    width: 26em;
+    min-height: 200px;
+    width: 100%;
     padding: 60px 40px;
     border-radius: var(--cards-corner-radius, 10px);
     background: var(--dark-card, rgba(17, 17, 17, 0.90));
     backdrop-filter: blur(30px);
+    margin-bottom: 100px;
 }
 
 .module-header {
@@ -153,6 +178,10 @@ input {
     justify-content: space-between;
     align-items: flex-end;
     align-self: stretch;
+}
+ 
+.module-header a {
+    color: white;
 }
 
 .input {
@@ -196,7 +225,6 @@ input {
     border-radius: 10px;
     background: var(--button-gradient-color, linear-gradient(172deg, #8D90EC 0%, #D58EE7 100%));
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #000;
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -206,6 +234,14 @@ input {
 
 .big-button:hover {
     cursor: pointer;
+}
+
+h2 {
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 144.523%; /* 69.371px */
 }
 
 .login-background {
@@ -224,4 +260,95 @@ input {
 
 .error {
     color: #D03841;
+}
+.header-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    min-width: 100%;
+}
+
+.main-header {
+    color: black;
+    display: flex;
+    width: 1235px;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 24px;
+    color: black;
+    
+}
+
+h3 {
+text-align: center;
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.space-between.big-text {
+    padding: 75px;
+}
+
+.blank {
+    width: 50%;
+}
+
+.blue {
+    color: #1599E3;
+}
+
+.orange {
+    color: #E38415;
+}
+
+.mint {
+    color: #2EDDC8;
+}
+
+.purple {
+    color: #482DEC;
+}
+
+.green {
+    color: #038A51;
+}
+
+.big-text {
+
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 75px;
+}
+
+.right-header {
+    display: flex;
+    width: 492px;
+    align-items: center;
+    gap: 143px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+
+.link-list {
+    display: flex;
+    align-items: center;
+    gap: 63px;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; 
 }
