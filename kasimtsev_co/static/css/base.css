@@ -59,16 +59,7 @@ body, html {
     max-width: 1235px;
 }
 
-.white-theme {
-    color: black;
-}
-.black-theme {
-    color: white;
-}
-
-
 a {
-    color: black;
     text-decoration: none;
 }
 .highlited-link {
@@ -99,20 +90,10 @@ input {
 }
 
 .white-submit {
-    color: white;
+    color: black;
     margin-top: 20px;
     width: 100%;
 }
-
-.white-theme.header-wrapper.main-header{
-    color: black;
-}
-
-
-.black-theme.header-wrapper.main-header{
-    color: white;
-}
-
 .big-logo-text {
     width: 201px;
     height: 48px;
@@ -149,7 +130,7 @@ input {
 }
 
 .module-heading {
-    color: var(--useless-text-dark, #1E1E1E);
+    color: var(--for-detail-text, #B0B0B0);;
     font-family: Inter;
     font-size: 24px;
     font-style: normal;
@@ -173,6 +154,7 @@ input {
 }
 
 .module {
+    color: white;
     min-height: 200px;
     width: 100%;
     padding: 60px 40px;
@@ -232,8 +214,6 @@ input {
     gap: 10px;
     align-self: stretch;
     border-radius: 10px;
-    background: var(--button-gradient-color, linear-gradient(172deg, #8D90EC 0%, #D58EE7 100%));
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -290,12 +270,11 @@ h2 {
 }
 
 h3 {
-text-align: center;
-font-family: Inter;
-font-size: 32px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .space-between.big-text {
@@ -361,4 +340,88 @@ line-height: normal;
 
 .black-background {
     background-color: black;
+    
+}
+
+.purple-background {
+    background: var(--button-gradient-color, linear-gradient(172deg, #8D90EC 0%, #D58EE7 100%));
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.banana-background {
+    background: var(--button-gradient-color-2, linear-gradient(2deg, #DFEC8D 0%, #D58EE7 100%));
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: black;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+body {
+    --text-color: black;
+}
+  
+.white-theme {
+    --text-color: #222;
+}
+
+.dark-theme {
+    --text-color: #eee;
+}
+
+h4 {
+    font-size: 40px;
+}
+
+a {
+    all: unset;
+}
+
+h1, h2, h3, h4, h5, h6, span, p, code, li, a{
+    color: var(--text-color)
+}
+
+a {
+    cursor: pointer;
+}
+
+.centered {
+    text-align: center;
+}
+
+.extra-heading {
+    font-size: 128px;
+}
+
+.vertical-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 44px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.vertical-layout p {
+    display: flex;
+    padding: 35px 67px;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: var(--cards-corner-radius, 10px);
+    background: var(--color-for-text-field-dark, #000);
+}
+
+.module-text {
+    color: var(--main-text-color-dark, #FFF);
+    text-align: center;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }

@@ -4,6 +4,8 @@
 
 {% block header %}{% include "components/header.html" %}{% endblock %}
 
+{% block color-scheme %}white-theme{%endblock%}
+
 {% block background %}white-background{% endblock %}
 
 {% block content %}
@@ -63,9 +65,8 @@
     </div>
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />
-    <input type="submit" class = "big-button white-submit" value="Перезвоните мне"/>
+    <input type="submit" class = "big-button purple-background" value="Перезвоните мне"/>
   </div>
 </form>
 {% endblock %}
 
-{% block theme %}white-theme{% endblock %}

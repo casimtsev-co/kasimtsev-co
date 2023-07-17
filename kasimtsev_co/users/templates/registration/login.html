@@ -18,7 +18,8 @@
     <p class = "error">Вы неправильно ввели логин или пароль.</p>
     {% endif %}
     <input type="hidden" name="next" value="{{ next }}" />
-    <input type="submit" class = "big-button" value="Войти">
+    <input type="submit" class = "big-button purple-background" value="Войти">
+    <a class = "big-button bordered-button" href = "{% url 'signup' %}">Создать аккаунт</a>
     <form>
 {% endblock %}
 

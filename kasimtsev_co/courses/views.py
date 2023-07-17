@@ -25,17 +25,44 @@ class courseView(CreateView):
         cd = form.cleaned_data
         return result
 
-def courseEnroleView():
+def courseEnroleView(request):
+    print ("courseEnroleView")
+
+    if not request.user.is_authenticated:
+        return redirect (f"{reverse_lazy('login')}?next={request.path}")
+
+    payment_id = request.session.get("payment_id")
+
+    if payment_id:
+        status = services.checkPaymentStatus (payment_id)
+        if status == "succeeded":
+            services.enroleUser (request.user)
+            return redirect ("enrole-success")
+
+        if status != "pending":
+            return redirect ("enrole-error")
+
     payment = services.getPaymentConfirmation ()
-    return redirect (payment.confirmation_url)
+    request.session["payment_id"] = payment.id
 
-def succesEnroleView():
-    pass
-    #return render ()
+    return render (request, "payments/payment.html", {"confirmation_token": payment.confirmation.confirmation_token, "return_url": request.build_absolute_uri(reverse_lazy('course-enrole'))})
 
+def successEnroleView(request): 
+    print ("successEnroleView")
+    return render (request, "enrole-success.html", context = {"login-required": True})
+        
+def enroleLoginRequiredView(request):
+    return render (request, "enrole-error.html", context = {"login-required": True})
+
+def errorEnroleView(request):
+    payment_id = request.session.get("payment_id")
+
+    if payment_id:
+        status = services.checkPaymentStatus (payment_id)
+        print (status)
+ 
+    return render (request, "enrole-error.html")
     
 def aboutView (request):
     pass
 
-
-# Create your views here.
