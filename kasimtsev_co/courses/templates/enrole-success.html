@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Главная{% endblock %}
+{% block title %}Успешно{% endblock %}
 
 {% block header %}{% include "components/header.html" %}{% endblock %}
 
@@ -16,7 +16,7 @@
           <h4>Вы оплатили курс,<br>скорее переходите к обучению!</h4>
         </div>
         <a class="button purple-background" href = "{% url 'table-of-contents' %}">Перейти к обучению</a>
-        <a class="button">Вернуться на главную</a>
+        <a class="button" href = "{% url 'main-page' %}">Вернуться на главную</a>
       </div>
     </div>
   </div>
