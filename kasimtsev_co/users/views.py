@@ -10,7 +10,6 @@ def StudentRegistrationView(request):
     form = UserSignupForm()
     if request.method == "POST":
         form = UserSignupForm(request.POST)
-        print(form)
         if form.is_valid():
             user = form.save()
             login(request, user)
@@ -26,7 +25,6 @@ class StudentRegistrationView_old(CreateView):
     def form_valid(self, form):
 
         result = super().form_valid(form)
-        print(result)
         cd = form.cleaned_data
         user = authenticate(username=cd['username'],
                             password=cd['password1'])

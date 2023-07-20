@@ -309,6 +309,7 @@ line-height: normal;
 }
 
 .button {
+    text-align: center;
     padding: 20px 15px;
     justify-content: center;
     align-items: center;
@@ -320,6 +321,10 @@ line-height: normal;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    display: inline-block;
+    margin: 20px 0;
+    min-width: 200px;
+    font-size: 24px;
 }
 
 .big-text {
@@ -408,7 +413,6 @@ a {
 .extra-heading {
     font-size: 100px;
     padding: 5px 0;
-    color: var(--main-text-color-dark, #FFF);
     text-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.65);
     font-family: Inter;
     font-style: normal;
@@ -532,7 +536,7 @@ footer {
     background-repeat: no-repeat;
 }
 
-#course-main-block {
+.ufo-background {
     background-image: url("/static/images/spacecraft.png");
     background-position: right center;
     background-repeat: no-repeat;
@@ -576,4 +580,8 @@ li.locked::after {
     flex-shrink: 0;
     font-size: 24px;
     padding: 0 15px;
+}
+
+.green-gradient-background {
+    background: linear-gradient(315deg, #2AE926 0%, #269FE9 100%);
 }
