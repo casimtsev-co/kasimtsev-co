@@ -27,7 +27,7 @@ class courseView(CreateView):
 def courseEnroleView(request):
 
     if not request.user.is_authenticated:
-        return redirect (f"{reverse_lazy('login')}?next={request.path}")
+        return redirect (f"{reverse_lazy('login')}?next={reverse_lazy('course-enrole')}")
 
     payment_id = request.session.get("payment_id")
 
@@ -47,7 +47,7 @@ def courseEnroleView(request):
 
 def tableOfCourse (request):
     if not request.user.is_authenticated:
-        return redirect (f"{reverse_lazy('login')}?next={request.path}")
+        return redirect (f"{reverse_lazy('login')}?next={reverse_lazy('course-enrole')}")
 
     if not services.getEnroleStatus(request.user):
         return redirect (f"course-enrole")
@@ -56,7 +56,7 @@ def tableOfCourse (request):
 
 def successEnroleView(request): 
     if not request.user.is_authenticated:
-        return redirect (f"{reverse_lazy('login')}?next={request.path}")
+        return redirect (f"{reverse_lazy('login')}?next={reverse_lazy('course-enrole')}")
 
     if not services.getEnroleStatus (request.user): return redirect (reverse_lazy('course-enrole'))
     return render (request, "enrole-success.html")
