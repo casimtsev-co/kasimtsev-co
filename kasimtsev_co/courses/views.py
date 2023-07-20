@@ -43,7 +43,7 @@ def courseEnroleView(request):
     payment = services.getPaymentConfirmation ()
     request.session["payment_id"] = payment.id
 
-    return render (request, "payments/payment.html", {"confirmation_token": payment.confirmation.confirmation_token, "return_url": request.build_absolute_uri(reverse_lazy('course-enrole'))})
+    return render (request, "payments/payment.html", {"confirmation_token": payment.confirmation.confirmation_token,})
 
 def tableOfCourse (request):
     if not request.user.is_authenticated:

@@ -23,7 +23,7 @@
   <script>
     const checkout = new window.YooMoneyCheckoutWidget({
         confirmation_token: '{{confirmation_token}}',
-        return_url: '{{return_url}}', 
+        return_url: window.location.href, 
 
     customization: {
         colors: {
