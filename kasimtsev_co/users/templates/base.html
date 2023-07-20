@@ -8,22 +8,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <title>{% block title %}Kasimtsev School{% endblock %}</title>
   <link href="{% static "css/base.css" %}" rel="stylesheet">
+  {% block head %}{%endblock%}
 </head>
 
 <body class = "{%block color-scheme%}dark-theme{% endblock %} {% block background %}{% endblock %}">
 {% block header %}
   {% include 'components/base-header.html' %}
 {% endblock %}
-<div class="content-wrapper background-filter">
 <div class="content">
 {% block content %}
-<p>На данный момент эта страница пуста
+<p>На данный момент эта страница пуста</p>
 {% endblock %}
-<footer>
-  <p>Все права защищены</p>
-</footer>
 </div>
 {% block footer %}
+<footer class="container">
+  <p>Все права защищены</p>
+</footer>
 {% endblock %}
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {

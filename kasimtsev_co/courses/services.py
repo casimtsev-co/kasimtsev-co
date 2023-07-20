@@ -27,11 +27,17 @@ def checkPaymentStatus (payment_id):
 def paymentCapture (payment_id):
     return Payment.capture(payment_id)
 
-def enroleUser (user):
+def getEnroleStatus (user):
     with open ("allowed-users.json") as file:
         students = file.read().strip().split('\n')
-        if str(user.id) in students: return
+        if str(user.id) in students: return True
+    return False
+
+def enroleUser (user):
+    if getEnroleStatus (user): return
     with open ("allowed-users.json", "a") as file:
         file.write (f"{user.id}\n")
+
+
  
 

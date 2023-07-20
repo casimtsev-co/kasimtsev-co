@@ -9,13 +9,15 @@
 {% block theme %}black-theme{% endblock %}
 
 {% block content %}
-  <div class = "module-wrapper">
-    <div class = "module">
-      {% block form %}
-      <h1>Здесь должна быть форма</h1>
-      <p>Но её пока ещё здесь нет ((<p>
-      <a class = "big-button" href = {% url 'main-page' %}>На главную</a>
-      {% endblock %}
+  <div class="content-wrapper">
+    <div class = "module-wrapper">
+      <div class = "module">
+        {% block form %}
+        <h1>Здесь должна быть форма</h1>
+        <p>Но её пока ещё здесь нет ((<p>
+        <a class = "big-button" href = {% url 'main-page' %}>На главную</a>
+        {% endblock %}
+      </div>
     </div>
   </div>
 {% endblock %}

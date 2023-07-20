@@ -4,13 +4,20 @@
 
 {% block header %}{% include "components/header.html" %}{% endblock %}
 
-{% block background %}white-background{% endblock %}
+{% block background %}black-background{% endblock %}
+{% block footer %}{%endblock%}
 
 {% block content %}
-  <div class = "module-wrapper">
-    <div class = "module">
-        <h2>Поздравляем!</h2>  
-        <p>Вы успешно записались на курс.</p>
+<div class="content-wrapper">
+    <div id = "smile-background" class="container ">
+      <div class="extra-padding">
+        <div class = "main-block-heading">
+          <h1 class = "extra-heading">Успех!</h1>
+          <h4>Вы оплатили курс,<br>скорее переходите к обучению!</h4>
+        </div>
+        <a class="button purple-background" href = "{% url 'table-of-contents' %}">Перейти к обучению</a>
+        <a class="button">Вернуться на главную</a>
+      </div>
     </div>
   </div>
 {% endblock %}

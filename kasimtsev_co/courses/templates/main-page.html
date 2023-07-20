@@ -8,17 +8,19 @@
 
 {% block background %}white-background{% endblock %}
 
+{% block footer %}{%endblock%}
+
 {% block content %}
 
-<div class = "space-between">
+<div class = "space-between container">
   <h2>Kasimtsev school - первый этап на пути в игровую индуcтрию</h2>
   <img src = "/static/images/gamepad.png" alt = "3d геймпад">
 </div>
-<div>
+<div class = "container">
   <h1>Почему мы</h1>
   <p class = "big-text">Мы будем вашими надежными наставниками и творческими спутниками, готовыми вдохновить, обучить и помочь вам воплотить свои самые смелые игровые идеи в реальность.</p>
 </div>
-<div>
+<div class = "container">
   <h1>Что будет, когда ты пройдёшь наш курс</h1>
   <ul>
     <li class = "space-between">
@@ -34,7 +36,6 @@
     </li>
   </ul>
 </div>
-
 <section class = "courses">
   <h1 class = "centered"><b>Наши курсы</b></h1>
   <div class = "section">
@@ -51,6 +52,7 @@
   </div>
 </section>
 
+<div class = "container">
 <p class = "big-text">Если вы хотите подробнее узнать о курсах и нашей школе, оставьте свой номер - позвоним и бесплатно проконсультируем по курсам</p>
 
 <form class = "form" action="{% url 'main-page' %}" method="post">
@@ -65,8 +67,9 @@
     </div>
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />
-    <input type="submit" class = "big-button purple-background" value="Перезвоните мне"/>
+    <input type="submit" class = "big-button white-submit" value="Перезвоните мне"/>
   </div>
 </form>
+</div>
 {% endblock %}
 

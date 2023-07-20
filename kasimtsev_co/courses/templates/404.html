@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}404{% endblock %}
+
+{% block header %}{% include "components/header.html" %}{% endblock %}
+
+{% block background %}black-background{% endblock %}
+{% block footer %}{%endblock%}
+
+{% block content %}
+<div class="content-wrapper">
+    <div id = "death-background" class="container ">
+      <div class="extra-padding">
+        <div class = "main-block-heading">
+          <h1 class = "extra-heading">404</h1>
+          <h4>Не удалось найти страницу</h4>
+        </div>
+        <a class="button purple-background" href = "{% url 'main-page' %}">Вернуться на главную</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

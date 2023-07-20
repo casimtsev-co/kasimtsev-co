@@ -8,21 +8,28 @@
 
 {% block theme %}black-theme{% endblock %}
 
-{% block content %}
+{% block footer %}{%endblock%}
 
-<div class = "space-between">
-  <div>
-  <h1 class = "extra-heading">Курс по 3ds max</h2>
-  <h4>Начни моделировать <span class = "purple">с нуля</span></h4>
-  <a class = "big-button banana-background", href= "{% url 'course-enrole' %}">Записаться на курс</a>
+{% block content %}
+<div class = "main-block container" id = "course-main-block">
+  <div class = "main-block-heading">
+    <h1 class = "extra-heading">Курс по 3ds max</h2>
+    <h4>Начни моделировать <span class = "purple">с нуля</span></h4>
+    <ul class = "pluses-list">
+      <li class = "">Неделя обучения</li>
+      <li class = "">Перспективная профессия</li>
+      <li class = "">4990₽ за курс</li>
+    </ul>
   </div>
-  <img src = "/static/images/spacecraft.png" alt = "3d инопрешеленец">
+  <a class = "button banana-background", href= "{% url 'course-enrole' %}">Записаться на курс</a>
 </div>
-<div class="module centered">
-  <h1>Главное о профессии</h1>
-  <p class = "big-text">Станьте востребованным специалистом 3ds Max и откройте двери к увлекательной и перспективной карьере. В мире трехмерной визуализации существует огромный спрос на профессионалов, владеющих навыками 3ds Max. Будьте частью процветающей индустрии развлечений, архитектуры, рекламы и дизайна, где ваш талант и творческий потенциал будут цениться.</p>
+<div class="container">
+  <div class="module centered">
+    <h1>Главное о профессии</h1>
+    <p class = "big-text">Станьте востребованным специалистом 3ds Max и откройте двери к увлекательной и перспективной карьере. В мире трехмерной визуализации существует огромный спрос на профессионалов, владеющих навыками 3ds Max. Будьте частью процветающей индустрии развлечений, архитектуры, рекламы и дизайна, где ваш талант и творческий потенциал будут цениться.</p>
+  </div>
 </div>
-<div>
+<div class="container">
   <h1>Что будешь знать после курса</h1>
   <ul>
     <li>
@@ -88,6 +95,7 @@
   </div>
 </section>
 
+<div class = "container">
 <p class = "big-text">Если вы хотите подробнее узнать о курсах и нашей школе, оставьте свой номер - позвоним и бесплатно проконсультируем по курсам</p>
 
 <form class = "form" action="{% url 'course' %}" method="post">
@@ -116,10 +124,7 @@
     </div>
     <a href = {% url 'course-enrole' %} class = "big-button white-submit">Оплатить</a>
   </div>
-
-
-
-
+</div>
 {% endblock %}
 
 

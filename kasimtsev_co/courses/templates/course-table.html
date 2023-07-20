@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Содержимое курса{% endblock %}
+
+{% block header %}{% include "components/header.html" %}{% endblock %}
+
+{% block background %}black-background{% endblock %}
+{% block footer %}{%endblock%}
+
+{% block content %}
+<div class="content-wrapper">
+    <div id = "" class="container ">
+      <h2><a class = "{url 'course'}">Базовый курс по 3ds max</a></h1>
+      <div class="big-padding">
+        <h1>Программа курса</h1>
+        <ul class = "table-of-contents">
+            <li class = "locked">Урок 1: Интерфейс в 3ds max</li>
+            <li class = "locked">Урок 2: Основные модификаторы и элементы</li>
+            <li class = "locked">Урок 3: Простое моделирование</li>
+            <li class = "locked">Урок 4: Источники света и освещение в 3ds max</li>
+            <li class = "locked">Урок 5: Техстуры и настройки рендера в 3ds max</li>
+            <li class = "locked">Урок 6: Финальное моделирование</li>
+            <li class = "locked">Урок 7: Подведение итогов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

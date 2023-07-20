@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
-
 from . import services
 from . import forms 
 
@@ -26,7 +25,6 @@ class courseView(CreateView):
         return result
 
 def courseEnroleView(request):
-    print ("courseEnroleView")
 
     if not request.user.is_authenticated:
         return redirect (f"{reverse_lazy('login')}?next={request.path}")
@@ -47,22 +45,40 @@ def courseEnroleView(request):
 
     return render (request, "payments/payment.html", {"confirmation_token": payment.confirmation.confirmation_token, "return_url": request.build_absolute_uri(reverse_lazy('course-enrole'))})
 
+def tableOfCourse (request):
+    if not request.user.is_authenticated:
+        return redirect (f"{reverse_lazy('login')}?next={request.path}")
+
+    if not services.getEnroleStatus(request.user):
+        return redirect (f"course-enrole")
+    
+    return  render (request, "course-table.html")
+
 def successEnroleView(request): 
-    print ("successEnroleView")
-    return render (request, "enrole-success.html", context = {"login-required": True})
+    if not request.user.is_authenticated:
+        return redirect (f"{reverse_lazy('login')}?next={request.path}")
+
+    if not services.getEnroleStatus (request.user): return redirect (reverse_lazy('course-enrole'))
+    return render (request, "enrole-success.html")
         
 def enroleLoginRequiredView(request):
-    return render (request, "enrole-error.html", context = {"login-required": True})
+    return render (request, "enrole-error.html")
 
 def errorEnroleView(request):
     payment_id = request.session.get("payment_id")
 
     if payment_id:
         status = services.checkPaymentStatus (payment_id)
-        print (status)
  
     return render (request, "enrole-error.html")
     
 def aboutView (request):
     pass
 
+
+def handler404(request, *args, **argv):
+    return render ('404.html', {},)
+
+
+def handler500(request, *args, **argv):
+    return render ('500.html', {},)

@@ -11,5 +11,6 @@ urlpatterns = [
     path( 'course/enrole', views.courseEnroleView, name = 'course-enrole' ),
     path( 'course/enrole/succesfull', views.successEnroleView, name = 'enrole-success' ),
     path( 'course/enrole/error', views.errorEnroleView, name = 'enrole-error' ),
+    path( 'course/table', views.tableOfCourse, name = 'table-of-contents' ),
     ]
 
