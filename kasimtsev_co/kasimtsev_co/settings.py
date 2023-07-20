@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-l9p-&g)myc55+(q-7*x39vctwsl-r4xzqs&yfa(y64tz-(a8m5
 DEBUG = True
 
 ALLOWED_HOSTS = ["www.kasimtsev-school.ru", "www.kasimtsev-school.online", "127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ["http://www.kasimtsev-school.ru", "http://www.kasimtsev-school.online"]
 
 
 # Application definition
