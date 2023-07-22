@@ -9,14 +9,19 @@
 
 {% block content %}
 <div class="content-wrapper">
-    <div id = "smile-background" class="container ">
+    <div id = "" class="container ">
       <div class="extra-padding">
-        <div class = "main-block-heading">
-          <h1 class = "extra-heading">Успех!</h1>
-          <h4>Вы оплатили курс,<br>скорее переходите к обучению!</h4>
+        <div class = "space-between">
+          <div>
+            <div class = "">
+              <h1 class = "extra-heading">Успех!</h1>
+              <h4>Вы оплатили курс,<br>скорее переходите к обучению!</h4>
+            </div>
+            <a class="button purple-background" href = "{% url 'table-of-contents' %}">Перейти к обучению</a>
+            <a class="button" href = "{% url 'main-page' %}">Вернуться на главную</a>
+          </div>
+          <img class ="middle-image" src = "/static/images/emoji.png" alt = "Смайлик">
         </div>
-        <a class="button purple-background" href = "{% url 'table-of-contents' %}">Перейти к обучению</a>
-        <a class="button" href = "{% url 'main-page' %}">Вернуться на главную</a>
       </div>
     </div>
   </div>

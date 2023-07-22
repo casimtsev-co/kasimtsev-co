@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}404{% endblock %}
+
+{% block header %}{% include "components/header.html" %}{% endblock %}
+
+{% block background %}black-background{% endblock %}
+{% block footer %}{%endblock%}
+
+{% block content %}
+<div class="content-wrapper">
+    <div id = "" class="container ">
+      <div class="extra-padding">
+        <div class = "space-between">
+            <div class = "">
+            <h1 class = "extra-heading">500</h1>
+            <h4>Произошла ошибка</h4>
+            </div>
+            <img class ="middle-image" src = "/static/images/death.png" alt = "Смерть">
+        </div>
+        <a class="button purple-background" href = "{% url 'main-page' %}">Вернуться на главную</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
