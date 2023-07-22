@@ -13,8 +13,11 @@
 {% block content %}
 
 <div class = "space-between container">
-  <h2>Kasimtsev school - первый этап на пути в игровую индуcтрию</h2>
-  <img src = "/static/images/gamepad.png" alt = "3d геймпад">
+  <div>
+    <h1 class="extra-heading">Kasimtsev school -</h1>
+    <h4>первый этап на пути в игровую индуcтрию</h4>
+  </div>
+  <img class = "big-img" src = "/static/images/gamepad.png" alt = "3d геймпад">
 </div>
 <div class = "container">
   <h1>Почему мы</h1>
@@ -36,8 +39,8 @@
     </li>
   </ul>
 </div>
-<div id = "course-ad" class = "green-gradient-background">
-  <div class = "container extra-padding ufo-background">
+<div id = "course-ad" class = "green-gradient-background vertical-padding">
+  <div class = "container ufo-background">
     <div>
       <h1 class="extra-heading">Курс<br>по 3D дизайну</h1>
       <h4>скидка 10% на все последующие курсы</h4>
@@ -60,18 +63,15 @@
       </div>
   </div>
 </section> -->
-
 <div class = "container">
 <p class = "big-text">Если вы хотите подробнее узнать о курсах и нашей школе, оставьте свой номер - позвоним и бесплатно проконсультируем по курсам</p>
 
-<form class = "form" action="{% url 'main-page' %}" method="post">
+<form action="{% url 'main-page' %}" method="post">
   <div class = "module black-theme">
     <p>Напишите нам и мы ответим вам на все ваши вопросы!</p>
     <div class = "space-between">
     {% for field in form %}
-        <div class = "inline-wrapper">
           {{ field }}
-        </div>
     {% endfor %}
     </div>
     {% csrf_token %}

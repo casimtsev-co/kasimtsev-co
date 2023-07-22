@@ -17,7 +17,7 @@
     {% if form.errors %}
     <p class = "error">Вы неправильно ввели логин или пароль.</p>
     {% endif %}
-    <input type="hidden" name="next" value="{{ next }}" />
+    <input type="hidden" name="next" value="{%url 'main-page'%}" />
     <input type="submit" class = "big-button purple-background" value="Войти">
     <a class = "big-button bordered-button" href = "{% url 'signup' %}">Создать аккаунт</a>
     <form>

@@ -35,7 +35,9 @@
     <li>
       <h3 class = "module-heading">Интерфейс 3ds max</h3>
       <div class = "space-between module">
-        <img src = "/static/images/3ds-max-interface.png" alt = "3d моделирование">
+        <div class = "cards__image">
+          <img src = "/static/images/3ds-max-interface.png" alt = "3d моделирование">
+        </div>
         <div class = "vertical-layout"> 
           <p class = "module-text">Узнаешь всё о интерфейсе 3ds max</p>
           <p class = "module-text">Сможешь настроить интерфейс, горячие клавиши и блоки модификаторов</p>
@@ -45,7 +47,9 @@
     <li>
       <h3 class = "module-heading">Основные модификаторы и элементы</h3>
       <div class = "space-between module">
-        <img src = "/static/images/basic-3d-modeling.png" alt = "Примитивы 3d моделирования">
+        <div class = "cards__image">
+          <img src = "/static/images/basic-3d-modeling.png" alt = "Примитивы 3d моделирования">
+        </div>
         <div class = "vertical-layout"> 
           <p class = "module-text">Научишься пользоваться модификаторами и операторами</p>
           <p class = "module-text">Научишься работать с основными объектами, линиями и текстом</p>
@@ -55,7 +59,9 @@
     <li>
       <h3 class = "module-heading">Материалы и освещение</h3>
       <div class = "space-between module">
-        <img src = "/static/images/meterials.png" alt = "Материалы">
+        <div class = "cards__image">
+          <img src = "/static/images/meterials.png" alt = "Материалы">
+        </div>
         <div class = "vertical-layout"> 
           <p class = "module-text">Узнаешь всё необходимое для успешной работы с материалами</p>
           <p class = "module-text">Научишься ставить и настраивать источники света</p>
@@ -65,47 +71,51 @@
     <li>
       <h3 class = "module-heading">Настройки рендера </h3>
       <div class = "space-between module">
-        <img src = "/static/images/rendering.png" alt = "Рендеринг">
+        <div class = "cards__image">
+          <img src = "/static/images/rendering.png" alt = "Рендеринг">
+        </div>
         <p class = "module-text">Узнаешь всё о настройке рендера для получения наилучшей картинки</p>
       </div>
     </li>
     <li>
       <h3 class = "module-heading">Практика</h3>
       <div class = "space-between module">
-        <img src = "/static/images/rockets.png" alt = "3d рокета">
+        <div class = "cards__image">
+          <img src = "/static/images/rockets.png" alt = "3d рокета">
+        </div>
         <p class = "module-text">Получишь практические навыки в моделировании</p>
       </div>
     </li>
   </ul>
 </div>
 <div class = "container">
-<p class = "big-text">Если вы хотите подробнее узнать о курсах и нашей школе, оставьте свой номер - позвоним и бесплатно проконсультируем по курсам</p>
+  <p class = "big-text">Если вы хотите подробнее узнать о курсах и нашей школе, оставьте свой номер - позвоним и бесплатно проконсультируем по курсам</p>
 
-<form class = "form" action="{% url 'course' %}" method="post">
-  <div class = "module black-theme">
-    <p>Напишите нам и мы ответим вам на все ваши вопросы!</p>
-    <div class = "space-between">
-    {% for field in form %}
-        <div class = "inline-wrapper">
-          {{ field }}
-        </div>
-    {% endfor %}
-    </div>
-    {% csrf_token %}
-    <input type="hidden" name="next" value="{{ next }}" />
-    <input type="submit" class = "big-button white-submit" value="Перезвоните мне"/>
-  </div>
-</form>
-
-  <div class = "module black-theme">
-    <div class = "space-between">
-      <div>
-        <h2>Напишите нам и мы ответим вам на все ваши вопросы!</h2>
-        <p><b>4990₽</b> за полный курс</p>
+  <form action="{% url 'course' %}" method="post">
+    <div class = "module black-theme">
+      <p>Напишите нам и мы ответим вам на все ваши вопросы!</p>
+      <div class = "space-between">
+      {% for field in form %}
+            {{ field }}
+      {% endfor %}
       </div>
-      <img src = "/static/images/abstract-tor.png" alt = "Абстракция">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next }}" />
+      <input type="submit" class = "big-button white-submit" value="Перезвоните мне"/>
     </div>
-    <a href = {% url 'course-enrole' %} class = "big-button white-submit">Оплатить</a>
+  </form>
+
+  <div>
+    <div class = "module black-theme">
+      <div class = "space-between">
+        <div>
+          <h2>Напишите нам и мы ответим вам на все ваши вопросы!</h2>
+          <p><b>4990₽</b> за полный курс</p>
+        </div>
+        <img src = "/static/images/abstract-tor.png" alt = "Абстракция">
+      </div>
+      <a href = {% url 'course-enrole' %} class = "big-button white-submit">Оплатить</a>
+    </div>
   </div>
 </div>
 {% endblock %}
