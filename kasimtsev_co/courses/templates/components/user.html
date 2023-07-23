@@ -1,5 +1,5 @@
 {% if user.is_authenticated %}
-<span>{{ user.get_full_name }}</span>
+<span>{{ user.first_name }}</span>
 {% else %}
 <a href = "{% url 'login' %}">Войти</a>
 {% endif %}
