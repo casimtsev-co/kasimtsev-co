@@ -550,7 +550,7 @@ footer {
     background-position: right center;
     background-repeat: no-repeat;
     overflow: hidden;
-    background-size: 45%;
+    background-size: 50%;
 }
 
 .big-img {
@@ -666,6 +666,9 @@ no-padding {
     }
     .extra-padding {
         padding: 100px 0px;
+    }
+    .ufo-background {
+        background-size: 70%;
     }
     h2 {
         font-size: 30px;
